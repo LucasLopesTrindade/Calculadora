@@ -48,6 +48,7 @@ class main_calculator(Tk):
 
     # Insere numeros no display
     def insert_num(self, display, invisible_display,num):    
+
         global pos 
         if pos == 0:
             display.delete(0,END) 
@@ -60,12 +61,14 @@ class main_calculator(Tk):
 
     # Limpa o display ao clicar em 'AC'
     def clear_display(self,display):
+
         display.delete(0,END)
         display.insert(0,0)
         global pos
         pos=0
 
     def calculate(self, display, invisible_display):
+
         result_string = display.get()
         invisible_result = invisible_display.get()
         print(invisible_result)
@@ -88,7 +91,8 @@ class basic_calc(Frame):
         Frame.__init__(self,parent)
         titleframe = Frame(self)
         titleframe.pack(side=TOP,fill=BOTH)
-        titlelabel1 = Label(titleframe,text='Calculadora do Trindade',bg='Yellow',fg='Red',relief=SUNKEN).pack(fill=BOTH,pady=10,ipady=10)
+        titlelabel1 = Label(titleframe,text='Calculadora do Trindade',
+            bg='Yellow',fg='Red',relief=SUNKEN).pack(fill=BOTH,pady=10,ipady=10)
 
         displayframe = Frame(self)
         displayframe.pack(side=TOP,fill=X,pady=10)
@@ -135,7 +139,6 @@ class cientific_calc(Frame):
         label.pack(pady=10,padx=10)
         button1 = Button(self, text="go to Calculator",command=lambda: controller.show_frame(basic_calc))
         button1.pack()
-
 
 app = main_calculator()
 app.mainloop()
